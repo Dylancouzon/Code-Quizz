@@ -6,7 +6,7 @@ var questions = {
         b: "Bla bla",
         c: "Okuurrr",
         d: "HTML",
-        right: "b"
+        win: "b"
     },
 
     1:{
@@ -15,6 +15,6 @@ var questions = {
         b: "Bla bla",
         c: "Okuurrr",
         d: "Lol",
-        right: "b"
+        win: "b"
     }
 };
