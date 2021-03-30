@@ -1,7 +1,7 @@
 var questions = {
 
     0:{
-        question: "What tag define the body inside the HYML page?",
+        question: "What tag define the body inside the HTML page?",
         a: "<!DOCTYPE html>",
         b: "<body>",
         c: "<header>",

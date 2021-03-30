@@ -21,7 +21,7 @@ function nextQuestion(nextQuestionId) {
   question.innerHTML = questions[nextQuestionId].question;
   main.innerHTML = "";
   var choice1 = document.createElement("a");
-  choice1.innerHTML = questions[nextQuestionId].a;
+  choice1.textContent = questions[nextQuestionId].a;
   choice1.setAttribute("data-id", "1");
   if (questions[nextQuestionId].win == "a") {
     choice1.setAttribute("data-win", "true");
@@ -29,7 +29,7 @@ function nextQuestion(nextQuestionId) {
   main.appendChild(choice1);
 
   var choice2 = document.createElement("a");
-  choice2.innerHTML = questions[nextQuestionId].b;
+  choice2.textContent = questions[nextQuestionId].b;
   choice2.setAttribute("data-id", "2");
   if (questions[nextQuestionId].win == "b") {
     choice2.setAttribute("data-win", "true");
@@ -37,7 +37,7 @@ function nextQuestion(nextQuestionId) {
   main.appendChild(choice2);
 
   var choice3 = document.createElement("a");
-  choice3.innerHTML = questions[nextQuestionId].c;
+  choice3.textContent = questions[nextQuestionId].c;
   choice3.setAttribute("data-id", "3");
   if (questions[nextQuestionId].win == "c") {
     choice3.setAttribute("data-win", "true");
@@ -46,7 +46,7 @@ function nextQuestion(nextQuestionId) {
   main.appendChild(choice3);
 
   var choice4 = document.createElement("a");
-  choice4.innerHTML = questions[nextQuestionId].d;
+  choice4.textContent = questions[nextQuestionId].d;
   choice4.setAttribute("data-id", "4");
   if (questions[nextQuestionId].win == "d") {
     choice4.setAttribute("data-win", "true");
