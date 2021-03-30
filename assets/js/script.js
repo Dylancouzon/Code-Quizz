@@ -58,9 +58,7 @@ function nextQuestion(nextQuestionId) {
 // Timer
 timerBox.addEventListener("click", function (event) {
 
-  // Need to do that
-  var playagain = null;
-  if(playagain){
+  if(event.target.id = "startagain"){
     score = 0;
     nextQuestionId = 0;
   }
@@ -73,7 +71,7 @@ timerBox.addEventListener("click", function (event) {
 
     if (time < 1) {
       clearInterval(timer);
-      timerBox.innerHTML = "<button id='start'>Play again</button>";
+      timerBox.innerHTML = "<button id='startagain'>Play again</button>";
       question.innerHTML = "Game Over";
       enterscore();
     }
@@ -97,6 +95,7 @@ function highScore(){
 
 // Endgame
 function enterscore(){
+  time = 0;
   main.innerHTML = "";
   scoreList.innerHTML = "Your Score is : " + score + "<form>Enter your name : <input type='text' id='name' name='name' > <button> Send </button></form>";
 }
