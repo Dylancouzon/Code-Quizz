@@ -10,10 +10,6 @@ var storedScore = JSON.parse(localStorage.getItem("score"));
 if(!storedScore){
   var storedScore = [];
 }
-var storedNames = JSON.parse(localStorage.getItem("names"));
-if(!storedNames){
-  var storedNames = [];
-}
 
 // Show next question and options 
 function nextQuestion(nextQuestionId) {
@@ -59,7 +55,6 @@ function nextQuestion(nextQuestionId) {
 timerBox.addEventListener("click", function (event) {
 
   if(event.target.id = "startagain"){
-    highScore();
     score = 0;
     nextQuestionId = 0;
   }
@@ -84,11 +79,12 @@ timerBox.addEventListener("click", function (event) {
 
 // High score
 function highScore(){
+  storedScore.sort();
+  storedScore.reverse();
   for (var i = 0; i < storedScore.length; i++) {
     var highScore = storedScore[i];
-    var highScoreName = storedNames[i];
     var li = document.createElement("li");
-    li.textContent = highScoreName + " - " + highScore + "pts";
+    li.textContent = highScore;
     scoreList.appendChild(li);
   }
 
@@ -119,13 +115,10 @@ main.addEventListener("click", function (event) {
 
 //Enter name in the high score
 scoreList.addEventListener("submit", function(event) {
+
   event.preventDefault();
   var name = document.getElementById("name");
-  console.log(name.value);
-  addName = storedNames.push(name.value);
-  localStorage.setItem("names", JSON.stringify(storedNames));
-
-  stores = storedScore.push(score);
+  stores = storedScore.push(score + "pts -- " + name.value);
   localStorage.setItem("score", JSON.stringify(storedScore));
   scoreList.innerHTML = "";
   highScore();
