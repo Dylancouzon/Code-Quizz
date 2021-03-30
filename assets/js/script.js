@@ -2,11 +2,18 @@ var startButton = document.querySelector("#start");
 var timerBox = document.getElementById("timer");
 var question = document.getElementById("question");
 var main = document.getElementById("main");
+var scoreList = document.querySelector(".Scorelist");
 var score = 0;
 var nextQuestionId = 0;
 var time;
 var storedScore = JSON.parse(localStorage.getItem("score"));
-if(!storedScore){var storedScore = [];}
+if(!storedScore){
+  var storedScore = [];
+}
+var storedNames = JSON.parse(localStorage.getItem("names"));
+if(!storedNames){
+  var storedNames = [];
+}
 
 // Show next question and options 
 function nextQuestion(nextQuestionId) {
@@ -51,6 +58,13 @@ function nextQuestion(nextQuestionId) {
 // Timer
 timerBox.addEventListener("click", function (event) {
 
+  // Need to do that
+  var playagain = null;
+  if(playagain){
+    score = 0;
+    nextQuestionId = 0;
+  }
+
   time = 31;
   var timer = setInterval(function () {
     timerBox.innerHTML = "";
@@ -71,18 +85,20 @@ timerBox.addEventListener("click", function (event) {
 
 // High score
 function highScore(){
-  
+  for (var i = 0; i < storedScore.length; i++) {
+    var highScore = storedScore[i];
+    var highScoreName = storedNames[i];
+    var li = document.createElement("li");
+    li.textContent = highScoreName + " - " + highScore + "pts";
+    scoreList.appendChild(li);
+  }
 
 }
 
 // Endgame
 function enterscore(){
-  main.innerHTML = "Your Score is : " + score + "<br> Enter your name :";
-  console.log(storedScore);
-  store = storedScore.push(score);
-  localStorage.setItem("score", JSON.stringify(store));
-  score = 0;
-  nextQuestionId = 0;
+  main.innerHTML = "";
+  scoreList.innerHTML = "Your Score is : " + score + "<form>Enter your name : <input type='text' id='name' name='name' > <button> Send </button></form>";
 }
 
 // Check the result selected
@@ -100,5 +116,21 @@ main.addEventListener("click", function (event) {
   }
 
 });
+
+//Enter name in the high score
+scoreList.addEventListener("submit", function(event) {
+  event.preventDefault();
+  var name = document.getElementById("name");
+  console.log(name.value);
+  addName = storedNames.push(name.value);
+  localStorage.setItem("names", JSON.stringify(storedNames));
+
+  stores = storedScore.push(score);
+  localStorage.setItem("score", JSON.stringify(storedScore));
+  scoreList.innerHTML = "";
+  highScore();
+
+});
+
 
 highScore();
