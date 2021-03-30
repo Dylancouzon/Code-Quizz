@@ -1,3 +1,4 @@
+// Declare all the variables
 var startButton = document.querySelector("#start");
 var timerBox = document.getElementById("timer");
 var question = document.getElementById("question");
@@ -11,7 +12,7 @@ if(!storedScore){
   var storedScore = [];
 }
 
-// Show next question and options 
+// Show next question and clickable options 
 function nextQuestion(nextQuestionId) {
 
   question.innerHTML = questions[nextQuestionId].question;
@@ -51,7 +52,7 @@ function nextQuestion(nextQuestionId) {
   window.nextQuestionId++;
 }
 
-// Timer
+// Timer. Starts at 30secs, remove 5 sec each time a wrong answer is clicked. Shows game over when the timer reaches 0.
 timerBox.addEventListener("click", function (event) {
 
   if(event.target.id = "startagain"){
@@ -77,7 +78,7 @@ timerBox.addEventListener("click", function (event) {
   
 });
 
-// High score
+// Sorts the highscore and shows it in li tags
 function highScore(){
   storedScore.sort();
   storedScore.reverse();
