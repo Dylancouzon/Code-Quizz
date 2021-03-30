@@ -59,6 +59,7 @@ function nextQuestion(nextQuestionId) {
 timerBox.addEventListener("click", function (event) {
 
   if(event.target.id = "startagain"){
+    highScore();
     score = 0;
     nextQuestionId = 0;
   }
