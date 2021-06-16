@@ -27,10 +27,11 @@ Realized for UC Berkeley Extension Coding Bootcamp
 <hr>
 
 ## Summary 
-You have 30seconds to answer 10 code related questions,
-Everytime you answer correctly, you earn 10pts, everytime you answer incorrectly, the timer lose 5sec.
-When the timer reaches 0, it is Game over. You then have the option to input your name into the High score board and then play again.
+You have 30seconds to answer 10 code-related questions,
+Every time you answer correctly, you earn 10pts, every time you answer incorrectly, the timer loses 5sec.
+When the timer reaches 0, it is Game over. You then have the option to input your name into the High scoreboard and then play again.
 The High score board is using Local Storage for Data persistence.
+
 
 
 
@@ -47,8 +48,9 @@ scoreList.addEventListener("submit", function(event) {
 
 });
 ```
-In the code snippet above, you can see the function that I used to store the user Score whenever they hit the submit button.
+In the code snippet above, you can see the function that I used to store the user’s Score whenever they hit the submit button.
 I then call the highScore function that will update the board with the new data.
+
 <br>
 <hr>
 
