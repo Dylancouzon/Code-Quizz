@@ -6,7 +6,8 @@ Realized for UC Berkeley Extension Coding Bootcamp
 ![Site](./assets/code_quizz.gif)
 
 <br>
-<form action="https://dylancouzon.github.io/Code-Quizz/" method="get" target="_blank"><button type="submit">Deployed Link</button></form>
+
+[Deployed Link](https://dylancouzon.github.io/Code-Quizz/)
 <br>
 
 ## Table of Contents
