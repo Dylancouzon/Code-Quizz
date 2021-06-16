@@ -1,25 +1,58 @@
-# Code-quizz
-Homework due 2021-3-23
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)<br>
 
-![Site](./assets/screenshot.png)
+# Code Quizz
+Realized for UC Berkeley Extension Coding Bootcamp
 
-## Technologies Used
-- HTML - Creates text and differents elements 
-- CSS - styles html elements on page
-- Javascript - Ask the questions
-- Local Storage - Store the High Score
-- GitHub - hosts and deploys the pages
-- Bash - Terminal
+![Site](./assets/code_quizz.gif)
+
+<br>
+<form action="https://dylancouzon.github.io/Code-Quizz/" method="get" target="_blank"><button type="submit">Deployed Link</button></form>
+<br>
+
+## Table of Contents
+
+1. [Technology](#technology)
+2. [Summary](#Summary)
+3. [Code Snippet](#Code)
+3. [Author](#Author)
+<br>
+<hr>
+
+## Technology
+<img align="left" alt="HTML" width="25x" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"/> &nbsp;
+<img align="left" alt="JavaScript" width="25x" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"/> &nbsp;
+<img align="left" alt="JavaScript" width="25x" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"/> &nbsp;
+<br>
+<hr>
 
 ## Summary 
-Code quiz,
-The user has 30seconds to answer 10 code related questions,
-Everytime the user answer correctly, he earns 10pts, everytime they answer incorrectly, the timer lose 5sec.
-When the timer reaches 0, it is Game over. The user then has the option to input his name into the High score board and then play again.
+You have 30seconds to answer 10 code related questions,
+Everytime you answer correctly, you earn 10pts, everytime you answer incorrectly, the timer lose 5sec.
+When the timer reaches 0, it is Game over. You then have the option to input your name into the High score board and then play again.
+The High score board is using Local Storage for Data persistence.
 
 
 
-## Author Links
-[LinkedIn](https://www.linkedin.com/in/dcouzon/)
-[GitHub](https://github.com/Dylancouzon)
+## Code
+```javascript
+scoreList.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+  var name = document.getElementById("name");
+  stores = storedScore.push(score + "pts -- " + name.value);
+  localStorage.setItem("score", JSON.stringify(storedScore));
+  scoreList.innerHTML = "";
+  highScore();
+
+});
+```
+In the code snippet above, you can see the function that I used to store the user Score whenever they hit the submit button.
+I then call the highScore function that will update the board with the new data.
+<br>
+<hr>
+
+## Author
+- [dylancouzon@gmail.com](mailto:dylancouzon@gmail.com)
+- [GitHub](https://github.com/Dylancouzon)
+- [LinkedIn](https://www.linkedin.com/in/dcouzon/)
 
